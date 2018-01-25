@@ -34,14 +34,18 @@
             android:text="账号"
             android:textColor="#000"
             android:textSize="20sp"/>
+        <!--内边距-->
 
         <EditText
             android:id="@+id/et_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:layout_marginLeft="5dp"
+
             android:background="@null"
             android:padding="10dp"/>
+        <!--左外边距-->
 
     </LinearLayout>
 
@@ -66,9 +70,12 @@
 
         <EditText
             android:id="@+id/et_password"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:layout_marginLeft="5dp"
+
             android:background="@null"
             android:inputType="textPassword"
             android:padding="10dp"/>
@@ -80,9 +87,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/ll_password"
+
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+
         android:layout_marginTop="50dp"
+
         android:background="#3C8DC4"
         android:text="登录"
         android:textColor="#ffffff"
