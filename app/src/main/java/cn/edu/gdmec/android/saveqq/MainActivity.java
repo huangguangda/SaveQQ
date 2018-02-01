@@ -1,14 +1,13 @@
 package cn.edu.gdmec.android.saveqq;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.FileNotFoundException;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -23,7 +22,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //初始化view
         initView();
         //如果用户保存了信息，进行数据的回显
-        Map<String,String> userInfo = FileSaveQQ.getUserInfo ( this );
+        /*Map<String,String> userInfo = FileSaveQQ.getUserInfo ( this );*/
+        Map<String, String> userInfo=SPSaveQQ.getUserInfo ( this );
+
         if (userInfo!=null){
             etNumber.setText ( userInfo.get ( "number" ) );
             etPassword.setText ( userInfo.get ( "password" ) );
@@ -56,12 +57,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toast.makeText ( this,"登录成功",Toast.LENGTH_LONG ).show ();
 
         //保存用户的信息。
-        boolean isSaveSucess =false;
-        try {
-            isSaveSucess=FileSaveQQ.saveUserInfo ( this,number,password );
-        } catch (FileNotFoundException e) {
+
+      /*  try {*/
+         /* boolean  isSaveSucess= FileSaveQQ.saveUserInfo ( this,number,password );*/
+    /*    } catch (FileNotFoundException e) {
             e.printStackTrace ();
-        }
+        }*/
+
+        boolean isSaveSucess = SPSaveQQ.saveUserInfo ( this, number, password );
         if (isSaveSucess){
             Toast.makeText ( this,"保存成功",Toast.LENGTH_LONG ).show ();
         }else {
